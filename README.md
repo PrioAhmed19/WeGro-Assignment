@@ -46,7 +46,7 @@ PASSWORD=your_mysql_password
 From the project root:
 
 ```bash
-cd E:\WEgro\FastAPI-Based-Customer-Support-Chatbot
+cd E:\WEgro
 uvicorn app.main:app --reload
 ```
 
