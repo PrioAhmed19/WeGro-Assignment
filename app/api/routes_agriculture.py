@@ -21,6 +21,18 @@ async def farm_summary(
     validate_choice("season", season)
     return agriculture_report_service.farm_summary(region, farm_type, year, season)
 
+@router.get("/farms/{farm_id}/performance", summary="Single Farm Performance")
+async def farm_performance(
+    farm_id: int,
+    year: Optional[int] = Query(None, description="2022, 2023, or 2024"),
+    crop_category: Optional[str] = Query(None, description="Crop category"),
+    market_type: Optional[str] = Query(None, description="Market type"),
+):
+    validate_choice("year", year)
+    validate_choice("crop_category", crop_category)
+    validate_choice("market_type", market_type)
+    return agriculture_report_service.farm_performance(farm_id, year, crop_category, market_type)
+
 
 @router.get("/farms/top", summary="Top Farms Ranking")
 async def top_farms(
@@ -54,17 +66,6 @@ async def loss_analysis(
     return agriculture_report_service.loss_analysis(region, year, season, quality_grade, crop_category)
 
 
-@router.get("/farms/{farm_id}/performance", summary="Single Farm Performance")
-async def farm_performance(
-    farm_id: int,
-    year: Optional[int] = Query(None, description="2022, 2023, or 2024"),
-    crop_category: Optional[str] = Query(None, description="Crop category"),
-    market_type: Optional[str] = Query(None, description="Market type"),
-):
-    validate_choice("year", year)
-    validate_choice("crop_category", crop_category)
-    validate_choice("market_type", market_type)
-    return agriculture_report_service.farm_performance(farm_id, year, crop_category, market_type)
 
 
 @router.get("/crops/yield-efficiency", summary="Crop Yield Efficiency")
