@@ -48,6 +48,11 @@ From the project root:
 ```bash
 uvicorn app.main:app --reload
 ```
+Open:
+
+```bash
+http://127.0.0.1:8000/docs
+```
 
 Health check:
 
