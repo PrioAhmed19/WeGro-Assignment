@@ -46,7 +46,6 @@ PASSWORD=your_mysql_password
 From the project root:
 
 ```bash
-cd E:\WEgro
 uvicorn app.main:app --reload
 ```
 
