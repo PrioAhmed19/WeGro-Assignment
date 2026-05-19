@@ -17,6 +17,10 @@ The API connects to the pre-populated `agriculture_db`, loads `vw_harvest_full`,
 
 Interactive docs are available at `http://localhost:8000/docs`.
 
+## Python Version
+
+3.12.8
+
 ## Setup
 
 ```bash
